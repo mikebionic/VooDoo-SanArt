@@ -72,4 +72,5 @@
             </nav>
         </div>
     </div>
+    @yield('header_inner')
 </header>
