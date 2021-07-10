@@ -64,7 +64,24 @@ class Product extends Model
 
     public function priceText(): string
     {
-        return $this->priceFormatted();
+        return $this->priceFormatted() . ' TMT';
+    }
+
+    public function phoneNumber()
+    {
+        $phone = optional($this->user)->phone;
+        if ($phone) {
+            $phone = '+993'.$phone;
+        }
+        return $phone;
+    }
+
+    public function getCoverPathAttribute()
+    {
+        $image = @json_decode($this->images)[0];
+        $image = $this->getImagePath($image);
+        if (!$image) $image = self::IMAGE_DEFAULT_PATH;
+        return $image;
     }
 
     public function getGalleryAttribute()
