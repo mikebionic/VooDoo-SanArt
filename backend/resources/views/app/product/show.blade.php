@@ -8,10 +8,6 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="details-1" role="tabpanel" aria-labelledby="details-1-tab">
                             <img src="{{ asset($product->cover_path) }}" alt="product details">
-{{--                            <ul class="sticker">--}}
-{{--                                <li>Featured</li>--}}
-{{--                                <li>New</li>--}}
-{{--                            </ul>--}}
                         </div>
                         @foreach($product->gallery as $imagePath)
                             <div class="tab-pane fade" id="details-2" role="tabpanel" aria-labelledby="details-2-tab">
@@ -51,46 +47,50 @@
                 </div>
                 <div class="product_details_features">
                     <div class="product_details_title">
-                        <h5 class="title">Features :</h5>
+                        <h5 class="title">Aýratynlyklar :</h5>
                     </div>
                     <div class="details_features_wrapper d-flex flex-wrap">
                         <div class="single_features d-flex">
-                            <h6 class="features_title">Category :</h6>
+                            <h6 class="features_title">Bölümi :</h6>
                             <p>
                                 <a href="{{ route('app.product.list', ['category' => $product->category]) }}">
                                     {{ $product->category->title }}
                                 </a>
                             </p>
                         </div>
-                        @if($product->width)
-                            <div class="single_features d-flex">
-                                <h6 class="features_title">Width :</h6>
-                                <p>{{ $product->width }}</p>
-                            </div>
-                        @endif
                         @if($product->location)
                             <div class="single_features d-flex">
-                                <h6 class="features_title">Location :</h6>
-                                <p>{{ $product->location->title }}</p>
-                            </div>
-                        @endif
-                        @if($product->height)
-                            <div class="single_features d-flex">
-                                <h6 class="features_title">Height :</h6>
-                                <p>{{ $product->height }}</p>
+                                <h6 class="features_title">Ýeri :</h6>
+                                <p>
+                                    <a href="{{ route('app.product.list', ['location' => $product->location]) }}">
+                                        {{ $product->location->title }}
+                                    </a>
+                                </p>
                             </div>
                         @endif
                         @if($product->weigh)
                             <div class="single_features d-flex">
-                                <h6 class="features_title">Weigh :</h6>
+                                <h6 class="features_title">Agramy (gr) :</h6>
                                 <p>{{ $product->weigh }}</p>
+                            </div>
+                        @endif
+                        @if($product->width)
+                            <div class="single_features d-flex">
+                                <h6 class="features_title">Ini (sm) :</h6>
+                                <p>{{ $product->width }}</p>
+                            </div>
+                        @endif
+                        @if($product->height)
+                            <div class="single_features d-flex">
+                                <h6 class="features_title">Beýikligi (sm):</h6>
+                                <p>{{ $product->height }}</p>
                             </div>
                         @endif
                     </div>
                 </div>
                 <div class="product_details_description">
                     <div class="product_details_title">
-                        <h5 class="title">Description :</h5>
+                        <h5 class="title">Barada :</h5>
                     </div>
                     <p>
                         {!! $product->description !!}
@@ -105,7 +105,7 @@
                 @if($product->user)
                     <div class="product_sidebar_owner mt-30">
                         <div class="product_details_title">
-                            <h5 class="title">Product Owner :</h5>
+                            <h5 class="title">Awtory :</h5>
                         </div>
                         <div class="product_owner_wrapper mt-20">
                             <div class="owner_author d-flex align-items-center">
@@ -135,7 +135,7 @@
                 @endif
                 <div class="product_sidebar_contact mt-30">
                     <div class="product_details_title">
-                        <h5 class="title">Contact Seller :</h5>
+                        <h5 class="title">Satyjy bilen habarlaşmak :</h5>
                     </div>
                     <div class="sidebar_contact_form">
                         <form action="product-details.html#">
@@ -156,7 +156,7 @@
                 </div>
                 <div class="product_sidebar_map mt-30">
                     <div class="product_details_title">
-                        <h5 class="title">Location:</h5>
+                        <h5 class="title">Geolokasiýasy:</h5>
                     </div>
                     <div class="gmap_canvas">
                         <iframe id="gmap_canvas" src="https://maps.google.com/maps/?q=@37.9332133,58.3596751,15.36z&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe>

@@ -34,6 +34,12 @@ class Location extends Model
         return $this->hasMany(self::class, 'parent_id', 'id');
     }
 
+    public function scopeParents($query)
+    {
+        $query->where('parent_id', null);
+        return $query;
+    }
+
     public function scopeSecondLevel($query)
     {
         $query->where('parent_id', '!=', null);

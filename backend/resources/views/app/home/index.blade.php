@@ -2,20 +2,14 @@
 
 @section('content')
     @foreach(\App\Models\Category::parents()->get() as $item)
+        @if($item->products()->count() < 1) @continue @endif
         <div class="row">
             <div class="col-lg-12">
-                <div class="ads_tabs d-sm-flex align-items-end justify-content-between pb-30">
-                    <div class="section_title mt-45">
-                        <h3 class="title" style="font-size: 30px">{{ $item->title }}</h3>
+                <div class="ads_tabs d-sm-flex align-items-end justify-content-between">
+                    <div class=" mt-40">
+                        <h4 class="title">{{ $item->title }}</h4>
                     </div>
-                    <div class="tabs_menu mt-50">
-                        <ul class="nav" id="myTab" role="tablist">
-                            <li>
-                                <a class="active" id="popular-tab" href="{{ route('app.product.list',['category' => $item->id]) }}"
-                                   role="tab" aria-controls="popular" aria-selected="true">Show more</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <a  href="{{ route('app.product.list',['category' => $item->id]) }}" >Ählisi</a>
                 </div>
             </div>
         </div>
