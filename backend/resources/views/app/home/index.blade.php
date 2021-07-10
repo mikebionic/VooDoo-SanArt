@@ -11,7 +11,7 @@
                     <div class="tabs_menu mt-50">
                         <ul class="nav" id="myTab" role="tablist">
                             <li>
-                                <a class="active" id="popular-tab" data-toggle="tab" href="{{ route('app.category.show', ['category' => $item]) }}"
+                                <a class="active" id="popular-tab" href="{{ route('app.product.list',['category' => $item->id]) }}"
                                    role="tab" aria-controls="popular" aria-selected="true">Show more</a>
                             </li>
                         </ul>
