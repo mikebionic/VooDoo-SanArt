@@ -57,7 +57,7 @@
                         <div class="single_features d-flex">
                             <h6 class="features_title">Category :</h6>
                             <p>
-                                <a href="{{ route('app.category.show', ['category' => $product->category]) }}">
+                                <a href="{{ route('app.product.list', ['category' => $product->category]) }}">
                                     {{ $product->category->title }}
                                 </a>
                             </p>

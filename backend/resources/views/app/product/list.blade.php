@@ -46,29 +46,34 @@
                     <div class="sidebar_title">
                         <h5 class="title">Baha aralygy</h5>
                     </div>
-                    <div class="price_range_content">
-                        <div class="range-slider">
-                            <input type="text" name="" class="js-range-slider" value="" />
+                    <form action="{{ request()->fullUrl() }}">
+                        <div class="price_range_content">
+                            <div class="range-slider">
+                                <input type="text" name="" class="js-range-slider" value="" />
+                            </div>
+                            <div class="extra-controls">
+                                <input type="text" name="start_price" class="js-input-from" value="{{ request()->get('start_price') ?? 0 }}" onchange="$(this).closest('form').submit()" />
+                                <input type="text" name="end_price" class="js-input-to" value="{{ request()->get('end_price') ?? 0 }}" onchange="$(this).closest('form').submit()" />
+                            </div>
                         </div>
-                        <div class="extra-controls">
-                            <input type="text" name="start_price" class="js-input-from" value="0" />
-                            <input type="text" name="end_price" class="js-input-to" value="0" />
-                        </div>
-                    </div>
+                        <button class="btn btn-primary">Ýerine ýetir</button>
+                    </form>
                 </div>
             </div>
         </div>
         <div class="col-lg-9">
-            <div class="product_topbar d-md-flex align-items-center justify-content-between pb-30">
-                <div class="product_select pt-40 d-flex flex-wrap">
-                    <select style="display: none;" name="order" class="filter_input">
-                        <option value="new">Iň täzeleri</option>
-                        <option value="cheap">Arzandan başla</option>
-                        <option value="expensive">Gymmatdan başla</option>
-                        <option value="viewed">Iň köp görülenler</option>
-                    </select>
+            <form action="{{ request()->fullUrl() }}">
+                <div class="product_topbar d-md-flex align-items-center justify-content-between pb-30">
+                    <div class="product_select pt-40 d-flex flex-wrap">
+                        <select style="display: none;" name="order" class="filter_input" onchange="$(this).closest('form').submit()">
+                            <option value="new" @if(request()->get('order') == 'new')selected @endif >Iň täzeleri</option>
+                            <option value="cheap" @if(request()->get('order') == 'cheap')selected @endif>Arzandan başla</option>
+                            <option value="expensive" @if(request()->get('order') == 'expensive')selected @endif>Gymmatdan başla</option>
+                            <option value="viewed" @if(request()->get('order') == 'viewed')selected @endif>Iň köp görülenler</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
+            </form>
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="grid" role="tabpanel" aria-labelledby="grid-tab">
                     <div class="product_grid">
