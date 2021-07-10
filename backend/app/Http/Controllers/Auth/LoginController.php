@@ -21,14 +21,16 @@ class LoginController
             'email' => $data['login'],
             'password' => $data['password']
         ])) {
-            return redirect()->route('app.home')->with('success', __('auth.failed'));
+            return redirect()->route('auth.login')->with('warning', __('auth.failed'))->withInput();
         }
         return redirect()->route('app.home')->with('success', __('auth.success', ['user' => optional(auth()->user())->name]));
     }
 
     public function logout()
     {
+        if (!auth()->check()) return redirect()->route('auth.login');
+        $user = auth()->user()->name;
         auth()->logout();
-        return redirect()->route('app.home')->with('success', __('auth.logged_out'));
+        return redirect()->route('app.home')->with('success', __('auth.logged_out', ['user' => $user]));
     }
 }

@@ -8,7 +8,7 @@
     <title>@yield('title')</title>
     @yield('stylesheets')
 </head>
-<body>
+<body class="gray-bg">
     @yield('body')
     @yield('javascripts')
 </body>
