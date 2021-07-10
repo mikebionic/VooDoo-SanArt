@@ -147,7 +147,7 @@
 		<div class="single_form">
 			<input type="text" id="longitude" placeholder="longitude">
 			<i class="far fa-map-marker-alt"></i>
-			<button id="location-button">Get User Location</button>
+			<button id="location-button" class="btn btn-outline-info">Get User Location</button>
 			<div id="map" style="width: 600px; height: 400px"></div>
 		</div>
 
@@ -307,16 +307,31 @@
 		function init(lat, long){
 			// Создание карты.
 			var myMap = new ymaps.Map("map", {
-					center: [37.929770, 58.367451],
+					center: [lat, long],
 					zoom: 13
-			});
+			}),
+			myGeoObject = new ymaps.GeoObject({
+            geometry: {
+                type: "Point",
+                coordinates: [lat, long]
+            },
+            properties: {
+                iconContent: 'Siz şu ýerde'
+            }
+        },{
+            preset: 'islands#blackStretchyIcon',
+            draggable: true
+        });
+			myMap.geoObjects
+        .add(myGeoObject)
 		}
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function(position){
 				console.log(position);
-				$('#latitude').val(position.coords.latitude)
-				$('#longitude').val(position.coords.longitude)
-				init(position.coords.latitude, position.coords.longitude)
+				var hardcoded = [37.929770, 58.367451]
+				$('#latitude').val(hardcoded[0])
+				$('#longitude').val(hardcoded[1])
+				init(hardcoded[0], hardcoded[1])
 			});
 		}
 	});
