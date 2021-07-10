@@ -49,7 +49,17 @@ class Product extends Model
 
     public function categoryId()
     {
-        return $this->belongsTo(Category::class);
+        return $this->category();
+    }
+
+    public function location()
+    {
+        return $this->belongsTo(Location::class);
+    }
+
+    public function locationId()
+    {
+        return $this->location();
     }
 
     public function priceFormatted(): string

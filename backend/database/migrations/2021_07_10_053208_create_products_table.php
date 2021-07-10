@@ -22,10 +22,15 @@ class CreateProductsTable extends Migration
             $table->string('status', 250)->default(\App\Models\Product::STATUS_ACTIVE);
             $table->unsignedBigInteger('quantity')->default(0);
             $table->unsignedBigInteger('category_id')->nullable();
+            $table->unsignedBigInteger('location_id')->nullable();
             $table->float('price');
-            $table->boolean('featured')->default(false);
             $table->boolean('enabled')->default(true);
+            $table->boolean('featured')->default(false);
             $table->bigInteger('viewed')->default(0);
+
+            $table->float('weight')->nullable();
+            $table->float('height')->nullable();
+            $table->float('width')->nullable();
 
             $table->timestamps();
         });
