@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
 
 class User extends \TCG\Voyager\Models\User
 {
@@ -32,6 +33,9 @@ class User extends \TCG\Voyager\Models\User
         'remember_token',
     ];
 
+    const IMAGE_DIR = 'users';
+    const IMAGE_DEFAULT_PATH = 'default.png';
+
     public function location()
     {
         return $this->belongsTo(Location::class, 'location_id');
@@ -40,6 +44,26 @@ class User extends \TCG\Voyager\Models\User
     public function locationId()
     {
         return $this->location();
+    }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'user_id');
+    }
+
+    public function getAvatarPathAttribute()
+    {
+        $avatar = $this->attributes['avatar'];
+        if (!$avatar) return null;
+        if (!Str::startsWith($avatar, 'storage')) {
+            if (!Str::startsWith($avatar, self::IMAGE_DIR)) {
+                $avatar = 'storage/' . self::IMAGE_DIR . '/' . $avatar;
+            }
+            else {
+                $avatar = 'storage/'. $avatar;
+            }
+        }
+        return $avatar;
     }
 
 }
