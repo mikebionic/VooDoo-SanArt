@@ -16,14 +16,36 @@
                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto">
                         <li>
-                            <a class="active" href="categories.html">Categories <span class="line"></span></a>
+                            <a href="#">Biz barada</a>
                         </li>
                         <li>
-                            <a href="categories.html#">Pages <i class="fa fa-angle-down"></i> <span class="line"></span></a>
+                            <a href="#">Bölümler <i class="fa fa-angle-down"></i> <span class="line"></span></a>
                             <ul class="sub-menu">
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="{{ route('auth.register') }}">Sign Up</a></li>
+                                @foreach(\App\Models\Category::parents()->get() as $item)
+                                    @if($loop->index < 10)
+                                        <li>
+                                            <a href="{{ route('app.product.list', ['category' => $item->id]) }}">{{ $item->title }}</a>
+                                            @if(count($item->children) > 0)
+                                                <ul class="sub-menu">
+                                                    @foreach($item->children as $subItem)
+                                                        <li>
+                                                            <a href="{{ route('app.product.list', ['category' => $subItem->id]) }}">{{ $subItem->title }}</a>
+                                                        </li>
+                                                    @endforeach()
+                                                </ul>
+                                            @endif
+                                        </li>
+                                    @else
+                                        <li>
+                                            <a href="{{ route('app.product.list') }}">Dowamy..</a>
+                                        </li>
+                                        @break
+                                    @endif
+                                @endforeach()
                             </ul>
+                        </li>
+                        <li>
+                            <a href="#">Habarlaşmak</a>
                         </li>
                     </ul>
                 </div>
@@ -50,4 +72,5 @@
             </nav>
         </div>
     </div>
+    @yield('header_inner')
 </header>
