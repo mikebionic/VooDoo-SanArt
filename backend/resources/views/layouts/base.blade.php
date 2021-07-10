@@ -15,17 +15,17 @@
 @section('javascripts')
     @parent
     <script src="{{ asset('assets/js/vendor/jquery-1.12.4.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('assets/js/vendor/modernizr-3.7.1.min.js') }}" type="ecc1b123275284d7de1d8bfd-text/javascript"></script>
-    <script src="{{ asset('assets/js/popper.min.js') }}" type="ecc1b123275284d7de1d8bfd-text/javascript"></script>
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}" type="ecc1b123275284d7de1d8bfd-text/javascript"></script>
-    <script src="{{ asset('assets/js/slick.min.js') }}" type="ecc1b123275284d7de1d8bfd-text/javascript"></script>
-    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}" type="ecc1b123275284d7de1d8bfd-text/javascript"></script>
-    <script src="{{ asset('assets/js/jquery.nice-select.min.js') }}" type="ecc1b123275284d7de1d8bfd-text/javascript"></script>
-    <script src="{{ asset('assets/js/waypoints.min.js') }}" type="ecc1b123275284d7de1d8bfd-text/javascript"></script>
-    <script src="{{ asset('assets/js/jquery.counterup.min.js') }}" type="ecc1b123275284d7de1d8bfd-text/javascript"></script>
-    <script src="{{ asset('assets/js/ion.rangeSlider.min.js') }}" type="ecc1b123275284d7de1d8bfd-text/javascript"></script>
-    <script src="{{ asset('assets/js/ajax-contact.js') }}" type="ecc1b123275284d7de1d8bfd-text/javascript"></script>
-    <script src="{{ asset('assets/js/main.js') }}" type="ecc1b123275284d7de1d8bfd-text/javascript"></script>
+    <script src="{{ asset('assets/js/vendor/modernizr-3.7.1.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/js/popper.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/js/slick.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/js/jquery.nice-select.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/js/waypoints.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/js/jquery.counterup.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/js/ion.rangeSlider.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/js/ajax-contact.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/js/main.js') }}" type="text/javascript"></script>
 @endsection
 
 @section('body')
