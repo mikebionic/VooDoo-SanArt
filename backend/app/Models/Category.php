@@ -33,11 +33,6 @@ class Category extends Model
         });
     }
 
-    public function parent()
-    {
-        return $this->belongsTo(self::class, 'parent_id', 'id');
-    }
-
     public function getImagePathAttribute()
     {
         $image = $this->attributes['image'];
@@ -51,6 +46,11 @@ class Category extends Model
             }
         }
         return $image;
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo(self::class, 'parent_id', 'id');
     }
 
     public function parentId()

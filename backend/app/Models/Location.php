@@ -18,4 +18,19 @@ class Location extends Model
             $query->orderBy('order', 'desc');
         });
     }
+
+    public function parent()
+    {
+        return $this->belongsTo(self::class, 'parent_id', 'id');
+    }
+
+    public function parentId()
+    {
+        return $this->parent();
+    }
+
+    public function children()
+    {
+        return $this->hasMany(self::class, 'parent_id', 'id');
+    }
 }

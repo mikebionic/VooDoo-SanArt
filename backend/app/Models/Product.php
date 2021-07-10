@@ -32,11 +32,6 @@ class Product extends Model
     protected static function boot()
     {
         parent::boot();
-
-        static::addGlobalScope('ordered', function (Builder $query) {
-            $query->orderBy('order', 'desc');
-        });
-
         static::addGlobalScope('enabled', function (Builder $query) {
             $query->where('enabled', true);
         });
@@ -107,6 +102,16 @@ class Product extends Model
             return $productId !== $value->id;
         });
         return $related->slice(0,$limit);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function userId()
+    {
+        return $this->user();
     }
 
     public function scopeAll(Builder $query)

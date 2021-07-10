@@ -19,7 +19,6 @@ class CreateProductsTable extends Migration
             $table->string('title', 250);
             $table->string('images')->nullable();
             $table->text('description')->nullable();
-            $table->string('status', 250)->default(\App\Models\Product::STATUS_ACTIVE);
             $table->unsignedBigInteger('quantity')->default(0);
             $table->unsignedBigInteger('category_id')->nullable();
             $table->unsignedBigInteger('location_id')->nullable();
