@@ -32,4 +32,14 @@ class User extends \TCG\Voyager\Models\User
         'remember_token',
     ];
 
+    public function location()
+    {
+        return $this->belongsTo(Location::class, 'location_id');
+    }
+
+    public function locationId()
+    {
+        return $this->location();
+    }
+
 }
