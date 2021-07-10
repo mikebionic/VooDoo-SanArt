@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="80" viewBox="0 0 80 80">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_43" data-name="Rectangle 43" width="80" height="80" transform="translate(924 7263)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_21" data-name="Mask Group 21" transform="translate(-924 -7263)" clip-path="url(#clip-path)">
+    <g id="portfolio" transform="translate(924 7263)">
+      <g id="Group_187" data-name="Group 187">
+        <g id="Group_186" data-name="Group 186">
+          <path id="Path_95" data-name="Path 95" d="M64.689,23.242a1.563,1.563,0,0,0,1.563-1.562V4.688A4.693,4.693,0,0,0,61.564,0H4.689A4.693,4.693,0,0,0,0,4.688V75.313A4.693,4.693,0,0,0,4.689,80H61.564a4.693,4.693,0,0,0,4.688-4.687V63.8a1.563,1.563,0,0,0-3.125,0V75.313a1.564,1.564,0,0,1-1.562,1.563H4.689a1.564,1.564,0,0,1-1.562-1.562V4.688A1.564,1.564,0,0,1,4.689,3.125H61.564a1.564,1.564,0,0,1,1.563,1.563V21.68A1.563,1.563,0,0,0,64.689,23.242Z" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_189" data-name="Group 189">
+        <g id="Group_188" data-name="Group 188">
+          <path id="Path_96" data-name="Path 96" d="M33.126,8.438a14.368,14.368,0,0,0-9.862,24.823,1.545,1.545,0,0,0,.168.156,14.348,14.348,0,0,0,19.388,0,1.562,1.562,0,0,0,.168-.156A14.368,14.368,0,0,0,33.126,8.438Zm0,25.625a11.19,11.19,0,0,1-6.8-2.292,7.812,7.812,0,0,1,13.591,0A11.19,11.19,0,0,1,33.126,34.063Zm-2.5-11.875V21.172a2.5,2.5,0,1,1,5,0v1.016a2.5,2.5,0,0,1-5,0Zm11.553,7.294a10.84,10.84,0,0,0-4.6-3.859,5.6,5.6,0,0,0,1.175-3.435V21.172a5.625,5.625,0,0,0-11.25,0v1.016a5.6,5.6,0,0,0,1.175,3.435,10.84,10.84,0,0,0-4.6,3.859,11.25,11.25,0,1,1,18.106,0Z" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_191" data-name="Group 191">
+        <g id="Group_190" data-name="Group 190">
+          <path id="Path_97" data-name="Path 97" d="M41.564,68.438H33.126a1.563,1.563,0,0,0,0,3.125h8.438a1.563,1.563,0,0,0,0-3.125Z" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_193" data-name="Group 193">
+        <g id="Group_192" data-name="Group 192">
+          <path id="Path_98" data-name="Path 98" d="M41.564,59.688H19.376a1.563,1.563,0,0,0,0,3.125H41.564a1.563,1.563,0,0,0,0-3.125Z" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_195" data-name="Group 195">
+        <g id="Group_194" data-name="Group 194">
+          <path id="Path_99" data-name="Path 99" d="M41.564,50.938H19.376a1.563,1.563,0,0,0,0,3.125H41.564a1.563,1.563,0,0,0,0-3.125Z" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_197" data-name="Group 197">
+        <g id="Group_196" data-name="Group 196">
+          <path id="Path_100" data-name="Path 100" d="M13.807,42.645a1.561,1.561,0,1,0,.458,1.1A1.575,1.575,0,0,0,13.807,42.645Z" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_199" data-name="Group 199">
+        <g id="Group_198" data-name="Group 198">
+          <path id="Path_101" data-name="Path 101" d="M13.807,51.4a1.561,1.561,0,1,0,.458,1.1A1.577,1.577,0,0,0,13.807,51.4Z" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_201" data-name="Group 201">
+        <g id="Group_200" data-name="Group 200">
+          <path id="Path_102" data-name="Path 102" d="M13.807,60.145a1.561,1.561,0,1,0,.458,1.1A1.577,1.577,0,0,0,13.807,60.145Z" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_203" data-name="Group 203">
+        <g id="Group_202" data-name="Group 202">
+          <path id="Path_103" data-name="Path 103" d="M41.564,42.188H19.376a1.563,1.563,0,0,0,0,3.125H41.564a1.563,1.563,0,0,0,0-3.125Z" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_205" data-name="Group 205">
+        <g id="Group_204" data-name="Group 204">
+          <path id="Path_104" data-name="Path 104" d="M76.719,20.363a6.562,6.562,0,0,0-8.965,2.4L48.092,56.821a1.565,1.565,0,0,0-.2.608l-1.384,12.4a1.562,1.562,0,0,0,2.479,1.432l10.044-7.4a1.56,1.56,0,0,0,.427-.477L79.121,29.327A6.57,6.57,0,0,0,76.719,20.363ZM50.01,66.624l.723-6.474,4.522,2.611Zm7.523-6.156-5.954-3.437L67.358,29.7l5.954,3.437Zm18.881-32.7-1.54,2.668-5.954-3.437,1.54-2.668a3.437,3.437,0,0,1,5.954,3.438Z" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
