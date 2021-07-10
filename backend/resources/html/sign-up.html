@@ -15,6 +15,19 @@
 <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/css/default.css">
 <link rel="stylesheet" href="assets/css/style.css">
+
+
+
+
+
+<script src="https://api-maps.yandex.ru/2.1/?apikey=2486014f-5aa5-4ac7-a8b8-048d24bde293&lang=ru_RU" type="text/javascript">
+</script>
+
+
+
+
+
+
 </head>
 <body class="gray-bg">
 
@@ -93,7 +106,6 @@
 
 
 
-
 <section class="categories_page pt-70 pb-120">
 <div class="container">
 	
@@ -126,6 +138,21 @@
 		<input type="password" placeholder="Confirm Password">
 		<i class="fal fa-key"></i>
 		</div>
+
+		<div class="single_form">
+			<input type="text" id="latitude" placeholder="latitude">
+			<i class="far fa-map-marker-alt"></i>
+		</div>
+		
+		<div class="single_form">
+			<input type="text" id="longitude" placeholder="longitude">
+			<i class="far fa-map-marker-alt"></i>
+			<button id="location-button" class="btn btn-outline-info">Get User Location</button>
+			<div id="map" style="width: 600px; height: 400px"></div>
+		</div>
+
+
+
 		<div class="single_form">
 		<button class="main-btn">Sign Up</button>
 		</div>
@@ -248,9 +275,7 @@
 
 
 
-
-
-<script src="assets/js/vendor/jquery-1.12.4.min.js" type="ecc1b123275284d7de1d8bfd-text/javascript"></script>
+<script src="assets/js/vendor/jquery-1.12.4.min.js" type="text/javascript"></script>
 <script src="assets/js/vendor/modernizr-3.7.1.min.js" type="ecc1b123275284d7de1d8bfd-text/javascript"></script>
 
 <script src="assets/js/popper.min.js" type="ecc1b123275284d7de1d8bfd-text/javascript"></script>
@@ -271,4 +296,45 @@
 
 <script src="assets/js/main.js" type="ecc1b123275284d7de1d8bfd-text/javascript"></script>
 <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="ecc1b123275284d7de1d8bfd-|49" defer=""></script></body>
+
+
+
+
+<script>
+	$('#location-button').click(function(e){
+		e.preventDefault();
+
+		function init(lat, long){
+			// Создание карты.
+			var myMap = new ymaps.Map("map", {
+					center: [lat, long],
+					zoom: 13
+			}),
+			myGeoObject = new ymaps.GeoObject({
+            geometry: {
+                type: "Point",
+                coordinates: [lat, long]
+            },
+            properties: {
+                iconContent: 'Siz şu ýerde'
+            }
+        },{
+            preset: 'islands#blackStretchyIcon',
+            draggable: true
+        });
+			myMap.geoObjects
+        .add(myGeoObject)
+		}
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(function(position){
+				console.log(position);
+				var hardcoded = [37.929770, 58.367451]
+				$('#latitude').val(hardcoded[0])
+				$('#longitude').val(hardcoded[1])
+				init(hardcoded[0], hardcoded[1])
+			});
+		}
+	});
+</script>
+
 </html>
