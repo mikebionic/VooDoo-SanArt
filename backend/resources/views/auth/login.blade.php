@@ -6,7 +6,7 @@
                 <div class="col-lg-5 col-md-7 col-sm-9">
                     <div class="sign_in_form">
                         <div class="sign_title">
-                            <h5 class="title">Sign In Now</h5>
+                            <h5 class="title">Hasaba gir</h5>
                         </div>
                         <form action="{{ route('auth.login_check') }}" method="post">
                             @csrf
@@ -22,11 +22,11 @@
                                 <div class="single_form d-sm-flex justify-content-between">
 
                                     <div class="sign_forgot">
-                                        <a href="forgot-password.html#">Forgot Password?</a>
+                                        <a href="#">Açar sözüňi unutdyňmy?</a>
                                     </div>
                                 </div>
                                 <div class="single_form">
-                                    <button class="main-btn">Sign In</button>
+                                    <button class="main-btn">Gir</button>
                                 </div>
 
                                 <div class="abcRioButtonContentWrapper" style="display:flex">

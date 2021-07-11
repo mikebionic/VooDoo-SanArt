@@ -19,6 +19,9 @@
                             <a href="#">Biz barada</a>
                         </li>
                         <li>
+                            <a href="#">Awtorlar</a>
+                        </li>
+                        <li>
                             <a href="#">Bölümler <i class="fa fa-angle-down"></i> <span class="line"></span></a>
                             <ul class="sub-menu">
                                 @foreach(\App\Models\Category::parents()->get() as $item)
@@ -54,18 +57,18 @@
                     <ul>
                         @auth()
                             <li>
-                                <a href="#" class="active">{{ auth()->user()->name }}</a>
+                                <a href="{{ route('user.index') }}" class="active">{{ auth()->user()->name }}</a>
                             </li>
                             <li>
                                 <a  class="sign-up" href="javascript:void(0)" onclick="$('#logout_form').submit()">
-                                    <i class="fal fa-sign-out"></i> Logout
+                                    <i class="fal fa-sign-out"></i> Çykyş
                                 </a>
                                 <form action="{{route('auth.logout')}}" method="post" style="display: none" id="logout_form">
                                     @csrf
                                 </form>
                             </li>
                         @else
-                            <li><a class="sign-up" href="{{ route('auth.login') }}"> <i class="fal fa-sign-in"></i> Sign In</a></li>
+                            <li><a class="sign-up" href="{{ route('auth.login') }}"> <i class="fal fa-sign-in"></i> Giriş</a></li>
                         @endif
                     </ul>
                 </div>

@@ -110,13 +110,14 @@
                         <div class="product_owner_wrapper mt-20">
                             <div class="owner_author d-flex align-items-center">
                                 <div class="author_image">
-                                    <img src="{{ asset($product->user->avatar) }}" alt="author">
+                                    <img src="{{ asset($product->user->avatar_path) }}" alt="author">
                                 </div>
                                 <div class="author_content media-body">
                                     <h5 class="author_name">{{ $product->user->name }}</h5>
                                     <p>Member Since 2021</p>
                                 </div>
                             </div>
+                            @if($product->user->location)
                             <div class="owner_address d-flex">
                                 <div class="address_icon">
                                     <i class="far fa-map-marker-alt"></i>
@@ -125,11 +126,14 @@
                                     <p>{{ optional($product->user->location)->title }}</p>
                                 </div>
                             </div>
-                            <div class="owner_call">
-                                <a class="main-btn" href="#">
-                                    <i class="fal fa-phone"></i> {{ $product->user->phone }}
-                                </a>
-                            </div>
+                            @endif
+                            @if($product->user->phone)
+                                <div class="owner_call">
+                                    <a class="main-btn" href="tel:+993{{ $product->user->phone }}">
+                                        <i class="fal fa-phone"></i> +993{{ $product->user->phone }}
+                                    </a>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 @endif

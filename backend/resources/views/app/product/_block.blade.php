@@ -13,7 +13,7 @@
             </p>
             <div class="ads_price_date d-flex justify-content-between">
                 <span class="price">{{ $product->priceText() }}</span>
-                <span class="date">{{ $product->updated_at->format('d M, Y') }}</span>
+{{--                <span class="date">{{ $product->updated_at->format('d M, Y') }}</span>--}}
                 <a href="tel:{{ $product->phoneNumber() }}">
                     <p class="sticker" style="color: #28a745; font-size:30px">
                         <i class="far fa-phone"></i>
