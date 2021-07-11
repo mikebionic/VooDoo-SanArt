@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['as' => 'app.', 'namespace' => 'App\\Http\\Controllers'], function () {
     Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/auction', 'HomeController@auction')->name('auction');
 
     Route::group(['prefix' => '/category', 'as' => 'category.'], function () {
         Route::get('/{category}', 'CategoryController@show')->name('show');
