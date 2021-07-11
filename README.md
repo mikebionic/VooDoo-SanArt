@@ -18,4 +18,4 @@ In browser open: http://localhost:8080
 * **MySQL or MariaDB**
 * **Composer**
 ### Screenshots
-![VOODOOBOYS](https://github.com/AshgabatGDG/VooDooBoys/blob/master/screenshot.jpeg?raw=png)
+![VOODOOBOYS](https://github.com/AshgabatGDG/VooDooBoys/blob/master/screenshot.png?raw=true)
