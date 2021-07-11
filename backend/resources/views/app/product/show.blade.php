@@ -1,5 +1,46 @@
 @extends('layouts.base')
 
+@section('javascripts')
+    @parent
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=2486014f-5aa5-4ac7-a8b8-048d24bde293&lang=ru_RU" type="text/javascript">
+    </script>
+    <script>
+        $(document).ready(function(){
+
+            function init(lat, long){
+                // Создание карты.
+                var myMap = new ymaps.Map("map", {
+                        center: [lat, long],
+                        zoom: 15
+                    }),
+                    myGeoObject = new ymaps.GeoObject({
+                        geometry: {
+                            type: "Point",
+                            coordinates: [lat, long]
+                        },
+                        properties: {
+                            iconContent: 'Awtor şu ýerde'
+                        }
+                    },{
+                        preset: 'islands#blackStretchyIcon',
+                        draggable: true
+                    });
+                myMap.geoObjects
+                    .add(myGeoObject)
+            }
+            var hardcoded = [37.929770, 58.367451]
+            $('#latitude').val(hardcoded[0])
+            $('#longitude').val(hardcoded[1])
+            setTimeout(() => {
+                init(hardcoded[0], hardcoded[1])
+            }, 3000);
+
+        });
+
+    </script>
+
+@endsection
+
 @section('content')
     <div class="row">
         <div class="col-lg-9">
@@ -163,7 +204,7 @@
                         <h5 class="title">Geolokasiýasy:</h5>
                     </div>
                     <div class="gmap_canvas">
-                        <iframe id="gmap_canvas" src="https://maps.google.com/maps/?q=@37.9332133,58.3596751,15.36z&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe>
+                        <div id="map" style="width:100%; height:250px"></div>
                     </div>
                 </div>
 
