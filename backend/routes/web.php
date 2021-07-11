@@ -37,6 +37,8 @@ Route::group(['as' => 'auth.', 'namespace' => 'App\\Http\\Controllers\\Auth'], f
 });
 Route::group(['as' => 'user.', 'namespace' => 'App\\Http\\Controllers\\User', 'prefix' => 'user'], function () {
     Route::get('/', 'UserController@index')->name('index');
+    Route::get('/edit', 'UserController@edit')->name('edit');
+
     Route::get('products', 'ProductController@list')->name('product_list');
     Route::get('product/new', 'ProductController@create')->name('product_create');
     Route::get('product/{product}/edit', 'ProductController@edit')->name('product_edit');

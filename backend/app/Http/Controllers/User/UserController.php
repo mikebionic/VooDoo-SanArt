@@ -8,4 +8,13 @@ class UserController
     {
         return view('user.index');
     }
+
+    public function edit()
+    {
+        $user = auth()->user();
+        if (!$user) return abort(403);
+        return view('user.user.edit', [
+            'user' => $user,
+        ]);
+    }
 }
