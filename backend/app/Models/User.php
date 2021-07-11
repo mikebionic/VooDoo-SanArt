@@ -34,7 +34,7 @@ class User extends \TCG\Voyager\Models\User
     ];
 
     const IMAGE_DIR = 'users';
-    const IMAGE_DEFAULT_PATH = 'default.png';
+    const IMAGE_DEFAULT_PATH = 'default.jpg';
 
     public function location()
     {

@@ -15,7 +15,7 @@ class OrderController
     public function show($order)
     {
         return view('user.order.show', [
-            
+
         ]);
     }
 }

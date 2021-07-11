@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-lg-10">
                     <div class="content_wrapper">
-                        <h3 class="title">HandMade saýta hoş geldiňiz!</h3>
+                        <h3 class="title">SanArt saýta hoş geldiňiz!</h3>
                         <p>Elde ýasalan ähli zatlar, satyn al, öz döredijiligiňi bahalandyr, sen muňa mynasyp!</p>
                         <ul class="header_btn">
                             <li><a class="main-btn" href="{{ route('app.product.list') }}">Harytlara geç</a></li>

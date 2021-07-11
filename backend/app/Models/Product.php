@@ -21,7 +21,7 @@ class Product extends Model
     const STATUS_DISABLED = 'disabled';
 
     const IMAGE_DIR = 'products';
-    const IMAGE_DEFAULT_PATH = 'default.png';
+    const IMAGE_DEFAULT_PATH = 'default.jpg';
 
     public static $statuses = [
         self::STATUS_ACTIVE,
@@ -99,7 +99,7 @@ class Product extends Model
 
     public function getImagePath(string $image = null)
     {
-        if (!$image) return null;
+        if (!$image) $image = self::IMAGE_DEFAULT_PATH;
         if (!Str::startsWith($image, 'storage')) {
             if (!Str::startsWith($image, self::IMAGE_DIR)) {
                 $image = 'storage/' . self::IMAGE_DIR . '/' . $image;

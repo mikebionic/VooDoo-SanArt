@@ -25,6 +25,10 @@ Route::group(['as' => 'app.', 'namespace' => 'App\\Http\\Controllers'], function
         Route::get('/{product}', 'ProductController@show')->name('show');
         Route::get('/', 'ProductController@list')->name('list');
     });
+    Route::group(['prefix' => '/author', 'as' => 'author.'], function () {
+        Route::get('/{author}', 'AuthorController@show')->name('show');
+        Route::get('/', 'AuthorController@list')->name('list');
+    });
     Route::get('locale/{locale}', 'LocaleController@change')->name('language.change');
 });
 Route::group(['as' => 'auth.', 'namespace' => 'App\\Http\\Controllers\\Auth'], function () {
@@ -51,6 +55,6 @@ Route::group(['as' => 'user.', 'namespace' => 'App\\Http\\Controllers\\User', 'p
 });
 
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'manager'], function () {
     Voyager::routes();
 });
