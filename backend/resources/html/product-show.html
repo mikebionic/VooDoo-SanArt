@@ -15,6 +15,24 @@
 <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/css/default.css">
 <link rel="stylesheet" href="assets/css/style.css">
+
+
+
+
+
+
+<script src="https://api-maps.yandex.ru/2.1/?apikey=2486014f-5aa5-4ac7-a8b8-048d24bde293&lang=ru_RU" type="text/javascript">
+</script>
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="gray-bg">
 
@@ -82,15 +100,55 @@
 </div>
 </div>
 </li>
+
+
+
+<li>
+	<div class="dropdown">
+	<a href="categories.html#" class="dropdown-toggle" id="cartMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cart</a>
+	<div class="dropdown-menu" aria-labelledby="cartMenuLink" style="width: 300px;">
+	<ul>
+
+		
+		<li class="d-flex" style="margin-left:10px">
+			<div class="single_ads_card mt-30 d-flex" style="margin-top: 0;">
+				<div class="ads_card_image" style="width: 60px;">
+				<img src="assets/images/ads-2.png" alt="ads" >
+				</div>
+				<div class="ads_card_content">
+					<h4 class="title" style="font-size: 30px;">
+						<a href="product-details.html">Fresh Digital Camera</a>
+					</h4>
+					<div class="ads_price_date d-flex justify-content-between justify-content-center" style="float:right">
+						<span class="price" style="margin-top: 0;">67 TMT</span>
+						<a href="#" style="padding: 0; padding-left: 1rem;">
+							<p class="sticker" style="color: #a7283d; font-size:20px; margin-top: 0;">
+								<i class="far fa-trash"></i>
+							</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</li>
+	
+
+	</ul>
+	</div>
+</div>
+</li>
+
+
+
 <li><a class="sign-up" href="sign-in.html">Sign In</a></li>
 </ul>
+
+
+
 </div>
 </nav>
 </div>
 </div>
 </header>
-
-
 
 
 
@@ -408,10 +466,17 @@
 		<div class="product_details_title">
 		<h5 class="title">Location:</h5>
 		</div>
+
+
 		<div class="gmap_canvas">
-		<iframe id="gmap_canvas" src="https://maps.google.com/maps/?q=@37.9332133,58.3596751,15.36z&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe>
+			<div id="map" style="width:190px; height:190px"></div>
 		</div>
-		</div>
+	
+	
+	
+	
+	
+	</div>
 
 		</div>
 		</div>
@@ -518,7 +583,7 @@
 
 
 
-<script src="assets/js/vendor/jquery-1.12.4.min.js" type="ecc1b123275284d7de1d8bfd-text/javascript"></script>
+<script src="assets/js/vendor/jquery-1.12.4.min.js" type="text/javascript"></script>
 <script src="assets/js/vendor/modernizr-3.7.1.min.js" type="ecc1b123275284d7de1d8bfd-text/javascript"></script>
 
 <script src="assets/js/popper.min.js" type="ecc1b123275284d7de1d8bfd-text/javascript"></script>
@@ -539,4 +604,48 @@
 
 <script src="assets/js/main.js" type="ecc1b123275284d7de1d8bfd-text/javascript"></script>
 <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="ecc1b123275284d7de1d8bfd-|49" defer=""></script></body>
+
+
+
+
+
+<script>
+		$(document).ready(function(){
+
+			function init(lat, long){
+				// Создание карты.
+				var myMap = new ymaps.Map("map", {
+						center: [lat, long],
+						zoom: 15
+				}),
+				myGeoObject = new ymaps.GeoObject({
+							geometry: {
+									type: "Point",
+									coordinates: [lat, long]
+							},
+							properties: {
+									iconContent: 'Müşderi şu ýerde'
+							}
+					},{
+							preset: 'islands#blackStretchyIcon',
+							draggable: true
+					});
+				myMap.geoObjects
+					.add(myGeoObject)
+			}
+				var hardcoded = [37.929770, 58.367451]
+				$('#latitude').val(hardcoded[0])
+				$('#longitude').val(hardcoded[1])
+				setTimeout(() => {
+					init(hardcoded[0], hardcoded[1])
+				}, 3000);
+
+	});
+
+</script>
+
+
+
+
+
 </html>
