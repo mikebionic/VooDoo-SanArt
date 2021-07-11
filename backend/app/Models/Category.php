@@ -13,7 +13,7 @@ class Category extends Model
     use HasFactory;
     use Translatable;
 
-    const IMAGE_DEFAULT_PATH = 'default.png';
+    const IMAGE_DEFAULT_PATH = 'default.jpg';
     const IMAGE_DIR = 'categories';
 
     protected $translatable = ['title', 'description'];

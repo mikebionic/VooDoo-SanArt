@@ -19,11 +19,14 @@
                             <a href="#">Biz barada</a>
                         </li>
                         <li>
-                            <a href="#">Awtorlar</a>
+                            <a href="{{ route('app.author.list') }}">Awtorlar</a>
                         </li>
                         <li>
                             <a href="#">Bölümler <i class="fa fa-angle-down"></i> <span class="line"></span></a>
                             <ul class="sub-menu">
+                                <li>
+                                    <a href="{{ route('app.product.list') }}">Ähli harytlar</a>
+                                </li>
                                 @foreach(\App\Models\Category::parents()->get() as $item)
                                     @if($loop->index < 10)
                                         <li>
